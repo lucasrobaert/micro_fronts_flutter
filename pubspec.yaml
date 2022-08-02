@@ -14,6 +14,9 @@ dependencies:
   lottie:
   shared_preferences:
   cupertino_icons: ^1.0.2
+  get_it:
+  dartz:
+  cached_network_image:
 
 dev_dependencies:
   flutter_test:
