@@ -1,22 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:movieapp/core/inject/inject.dart';
-import 'package:movieapp/features/movie/presentations/ui/pages/home_page.dart';
+import 'package:micro_core/app/base_app.dart';
+import 'package:micro_core/app/micro_core_utils.dart';
+import 'package:micro_core/app/micro_app.dart';
+import 'package:movie/micro_app_movie_resolver.dart';
 
 void main() {
-  Inject.initialize();
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget with BaseApp {
+  MyApp() {
+    super.registerInjections();
+    super.registerRoutes();
+  }
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData.dark(),
-      home: const HomePage(),
+      navigatorKey: navigatorKey,
+      onGenerateRoute: super.generateRoute,
+      initialRoute: '/home',
     );
   }
+
+  @override
+  Map<String, WidgetBuilderArgs> get baseRoutes => {};
+
+  @override
+  List<MicroApp> get microApps => [
+        MicroAppMovieResolver(),
+      ];
 }
