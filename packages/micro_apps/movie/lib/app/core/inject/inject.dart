@@ -11,7 +11,7 @@ import 'package:movie/app/features/movie/domain/usecases/get_movies_usecase_imp.
 import 'package:movie/app/features/movie/presentations/controller/movie_controller.dart';
 
 class Inject {
-  static initialize() {
+  static void initialize() {
     GetIt getIt = GetIt.instance;
     // core
     getIt.registerLazySingleton<HttpService>(() => DioHttpServiceImp());

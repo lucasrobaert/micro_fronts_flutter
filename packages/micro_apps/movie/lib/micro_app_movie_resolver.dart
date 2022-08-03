@@ -4,7 +4,7 @@ import 'package:movie/app/features/movie/presentations/ui/pages/home_page.dart';
 
 class MicroAppMovieResolver implements MicroApp {
   @override
-  void Function() get injectionsRegister => Inject.initialize();
+  void Function() get injectionsRegister => Inject.initialize;
 
   @override
   String get microAppName => 'micro_app_login';

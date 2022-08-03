@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget with BaseApp {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'MovieApp',
       theme: ThemeData.dark(),
       navigatorKey: navigatorKey,
       onGenerateRoute: super.generateRoute,
