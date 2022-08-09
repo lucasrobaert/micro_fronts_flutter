@@ -1,3 +1,4 @@
+import 'package:eventbus/eventbus.dart';
 import 'package:micro_core/micro_core.dart';
 import 'package:movie/app/core/inject/inject.dart';
 import 'package:movie/app/features/movie/presentations/ui/pages/home_page.dart';
@@ -12,5 +13,12 @@ class MicroAppMovieResolver implements MicroApp {
   @override
   Map<String, WidgetBuilderArgs> get routes => {
         '/home': (context, args) => const HomePage(),
+      };
+
+  @override
+  void Function() get createListener => () {
+        EventBus.listen((event) {
+          print(event);
+        });
       };
 }

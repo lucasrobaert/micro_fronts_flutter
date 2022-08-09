@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget with BaseApp {
   MyApp() {
     super.registerInjections();
     super.registerRoutes();
+    super.registerListener();
   }
 
   @override
